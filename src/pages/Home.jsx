@@ -6,6 +6,4 @@ export function Home() {
     </Container>
   );
 }
-const Container = styled.div`
-  height: 100vh;
-`;
+const Container = styled.div``;
