@@ -1,7 +1,10 @@
 import { createContext, useState } from "react";
-import { MyRoutes } from "./index";
-import { Light, Dark } from "./index";
+import { Light, Dark, AuthContextProvider, MyRoutes } from "./index";
 import { ThemeProvider } from "styled-components";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 export const ThemeContext = createContext(null);
 
@@ -16,11 +19,16 @@ function App() {
 
   return (
     <>
-      <ThemeContext.Provider value={{ setTheme, theme }}>
-        <ThemeProvider theme={themeStyle}>
-          <MyRoutes />
-        </ThemeProvider>
-      </ThemeContext.Provider>
+      <QueryClientProvider client={queryClient} contextSharing={true}>
+        <ThemeContext.Provider value={{ setTheme, theme }}>
+          <ThemeProvider theme={themeStyle}>
+            <AuthContextProvider>
+              <MyRoutes />
+              <ReactQueryDevtools initialIsOpen={false} />
+            </AuthContextProvider>
+          </ThemeProvider>
+        </ThemeContext.Provider>
+      </QueryClientProvider>
     </>
   );
 }
