@@ -31,6 +31,7 @@ export const Light = {
   slideroffset: "0.3em",
   sizeoficon: "1.4em",
   colorSubtitle: "#2c2c2c",
+  colorScroll: "#cac9ca",
 };
 export const Dark = {
   bgtgderecha: "#21252B",
@@ -64,5 +65,6 @@ export const Dark = {
   logorotate: "-360deg",
   slideroffset: "0.3em",
   sizeoficon: "1.4em",
+  colorScroll: "#434343",
   colorSubtitle: "#b7b7b7",
 };

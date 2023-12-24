@@ -13,8 +13,6 @@ export const AuthContextProvider = ({ children }) => {
           setUser(null);
         } else {
           setUser(session?.user.user_metadata);
-          console.log("Evento: ", event);
-          console.log("Session: ", session?.user.user_metadata);
         }
       }
     );
