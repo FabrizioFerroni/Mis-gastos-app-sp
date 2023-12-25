@@ -11,17 +11,17 @@ import { TbPig } from "react-icons/tb";
 export const DesplegableUser = [
   {
     text: "Mi perfil",
-    icono: v.iconoUser,
+    icono: <v.iconoUser />,
     tipo: "miperfil",
   },
   {
     text: "Configuracion",
-    icono: v.iconoSettings,
+    icono: <v.iconoSettings />,
     tipo: "configuracion",
   },
   {
     text: "Cerrar sesión",
-    icono: v.iconoCerrarSesion,
+    icono: <v.iconoCerrarSesion />,
     tipo: "cerrarsesion",
   },
 ];
@@ -62,7 +62,7 @@ export const LinksArray = [
     to: "/informes",
   },
   {
-    label: "Dashboard",
+    label: "Tablero",
     icon: <RiDashboard3Line />,
     to: "/dashboard",
   },
@@ -71,7 +71,7 @@ export const SecondarylinksArray = [
   {
     label: "Configuración",
     icon: <AiOutlineSetting />,
-    to: "/configurar",
+    to: "/configuracion",
   },
   {
     label: "Acerca de",
