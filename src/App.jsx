@@ -7,22 +7,37 @@ import {
   Sidebar,
   Device,
   MenuMovil,
+  useUsuarioStore,
 } from "./index";
 import { useLocation } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { useQuery } from "@tanstack/react-query";
 
 export const ThemeContext = createContext(null);
 
 function App() {
+  const { mostrarUsuarios, datausuarios } = useUsuarioStore();
   const { pathname } = useLocation();
-  const [theme, setTheme] = useState("dark");
-  const themeStyle = theme === "light" ? Light : Dark;
+  const theme = datausuarios.tema === "0" ? "claro" : "oscuro";
+  const themeStyle = theme === "claro" ? Light : Dark;
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { isLoading, error } = useQuery({
+    queryKey: ["mostrar usuarios"],
+    queryFn: () => mostrarUsuarios(),
+  });
+
+  if (isLoading) {
+    return <div>Cargando...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   return (
     <>
-      <ThemeContext.Provider value={{ setTheme, theme }}>
+      <ThemeContext.Provider value={{ theme }}>
         <ThemeProvider theme={themeStyle}>
           <AuthContextProvider>
             {pathname != "/iniciarsesion" ? (
