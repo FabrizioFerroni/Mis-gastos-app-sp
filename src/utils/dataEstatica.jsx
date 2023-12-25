@@ -83,10 +83,10 @@ export const SecondarylinksArray = [
 export const TemasData = [
   {
     icono: "🌞",
-    descripcion: "light",
+    descripcion: "claro",
   },
   {
     icono: "🌚",
-    descripcion: "dark",
+    descripcion: "oscuro",
   },
 ];
