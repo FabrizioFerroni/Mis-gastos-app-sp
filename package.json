@@ -10,14 +10,24 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.2",
     "@supabase/supabase-js": "^2.39.1",
     "@tanstack/react-query": "^5.14.2",
     "@tanstack/react-query-devtools": "^5.14.5",
+    "dayjs": "^1.11.10",
+    "emoji-picker-react": "^4.6.0",
     "iso-country-currency": "^0.7.2",
     "react": "^18.2.0",
+    "react-color": "^2.19.3",
+    "react-content-loader": "^6.2.1",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.49.2",
     "react-icons": "^4.12.0",
+    "react-lottie": "^1.2.3",
     "react-router-dom": "^6.21.0",
+    "react-spinners": "^0.13.8",
     "styled-components": "^6.1.1",
     "sweetalert2": "^11.10.1",
     "zustand": "^4.4.7"
@@ -31,5 +41,10 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "vite": "^5.0.8"
+  },
+  "overrides": {
+    "react-lottie": {
+      "react": "^0.14.7 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0"
+    }
   }
 }
