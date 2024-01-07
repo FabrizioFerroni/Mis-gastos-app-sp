@@ -8,6 +8,8 @@ import {
   Device,
   MenuMovil,
   useUsuarioStore,
+  Login,
+  SpinnerLoader,
 } from "./index";
 import { useLocation } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
@@ -19,7 +21,7 @@ export const ThemeContext = createContext(null);
 function App() {
   const { mostrarUsuarios, datausuarios } = useUsuarioStore();
   const { pathname } = useLocation();
-  const theme = datausuarios.tema === "0" ? "claro" : "oscuro";
+  const theme = datausuarios?.tema === "0" ? "claro" : "oscuro";
   const themeStyle = theme === "claro" ? Light : Dark;
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { isLoading, error } = useQuery({
@@ -28,7 +30,7 @@ function App() {
   });
 
   if (isLoading) {
-    return <div>Cargando...</div>;
+    return <SpinnerLoader />;
   }
 
   if (error) {
@@ -53,7 +55,7 @@ function App() {
                 </ContainerBody>
               </Container>
             ) : (
-              <MyRoutes />
+              <Login />
             )}
 
             <ReactQueryDevtools initialIsOpen={false} />

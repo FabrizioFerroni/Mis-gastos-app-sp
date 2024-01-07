@@ -2,7 +2,9 @@ import { ContentHeader, DataUser } from "../../index";
 export function Header({ stateConfig }) {
   return (
     <ContentHeader>
-      <DataUser stateConfig={stateConfig} />
+      <div onClick={(e) => e.stopPropagation()}>
+        <DataUser stateConfig={stateConfig} />
+      </div>
     </ContentHeader>
   );
 }

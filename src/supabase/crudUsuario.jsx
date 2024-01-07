@@ -16,12 +16,13 @@ export const MostrarUsuarios = async () => {
     const { error, data } = await supabase
       .from("usuarios")
       .select()
-      .eq("idauth_supabase", idAuthSupabase);
+      .eq("idauth_supabase", idAuthSupabase)
+      .maybeSingle();
 
     if (error) throw new Error("MostrarUsuario try: " + error.message);
 
     if (data) {
-      return data[0];
+      return data;
     }
   } catch (error) {
     throw new Error("MostrarUsuario catch: " + error.message);
