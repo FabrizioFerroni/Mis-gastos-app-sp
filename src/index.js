@@ -72,6 +72,7 @@ export * from "./supabase/crudCuentas";
 export * from "./supabase/crudMovimientos";
 export * from "./supabase/crudUsuario";
 export * from "./supabase/globalSupabase";
+export * from "./supabase/reportes";
 export * from "./supabase/supabase.config";
 export * from "./utils/Conversiones";
 export * from "./utils/dataEstatica";

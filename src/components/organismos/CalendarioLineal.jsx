@@ -27,7 +27,6 @@ export function CalendarioLineal({ value, setValue, setFormatoFecha }) {
 
   function IniciarCalendario() {
     setValue(`${months[currMonth]}  ${currYear}`);
-    // setValue(months[currMonth] + " " + currYear);
     let mes = "";
 
     if (currMonth + 1 < 10) {
@@ -72,7 +71,6 @@ export function CalendarioLineal({ value, setValue, setFormatoFecha }) {
 
   useEffect(() => {
     IniciarCalendario();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -95,7 +93,6 @@ export function CalendarioLineal({ value, setValue, setFormatoFecha }) {
 }
 
 const Container = styled.div`
-  /* width: 450px; */
   border-radius: 10px;
   height: 100%;
   display: flex;
