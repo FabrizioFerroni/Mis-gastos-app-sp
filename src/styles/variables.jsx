@@ -9,7 +9,7 @@ import { MdExitToApp } from "react-icons/md";
 import { FcPicture } from "react-icons/fc";
 import { CgMathPlus } from "react-icons/cg";
 import { TbBrandSupabase } from "react-icons/tb";
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaGithub, FaLinkedin } from "react-icons/fa";
 import { BsArrowDown, BsArrowUpShort } from "react-icons/bs";
 import { FaBalanceScale } from "react-icons/fa";
 import logo from "../assets/gastos.png";
@@ -64,6 +64,8 @@ export const v = {
   agregar: CgMathPlus,
   iconosupabase: TbBrandSupabase,
   iconoreact: FaReact,
+  iconogithub: FaGithub,
+  iconolinkedin: FaLinkedin,
   flechaabajolarga: BsArrowDown,
   flechaarribalarga: BsArrowUpShort,
   balance: FaBalanceScale,

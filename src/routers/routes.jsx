@@ -7,6 +7,7 @@ import {
   Configuracion,
   Categorias,
   Movimientos,
+  Informe,
 } from "../index";
 
 export function MyRoutes() {
@@ -17,8 +18,10 @@ export function MyRoutes() {
         element={<ProtectedRoute user={user} redirectTo={"/iniciarsesion"} />}
       >
         <Route path="/" element={<Home />} />
+        <Route path="/acercade" element={<Home />} />
         <Route path="/categorias" element={<Categorias />} />
         <Route path="/configuracion" element={<Configuracion />} />
+        <Route path="/informes" element={<Informe />} />
         <Route path="/movimientos" element={<Movimientos />} />
       </Route>
       <Route path="/iniciarsesion" element={<Login />} />
